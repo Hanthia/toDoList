@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+// Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+@import 'assets/theme/fonts.scss';
+@import 'assets/theme/colors.scss';
+@import 'ngx-toastr/toastr';
+
+
+body {
+  overflow-y: unset;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  background-color: $primary-color-white;
+  color: $font-primary-color;
+}
+
+.content {
+  margin: 1.5rem;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-detail-dialog {
+    width: 75%;
+    height: 80%;
+    margin-top: 3rem;
+    .expansion-header {
+        background: #d5d8da !important;
+        font-weight: 300;
+        font-size: 15px;
+        color: #333 !important;
+    }
+    .mat-expansion-panel {
+        padding-top: 16px;
+    }
+    .mat-dialog-container {
+        position: relative;
+        height: fit-content;
+    }
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: white !important;
+  width: 50% !important;
+  height: 50% !important;
+
+}
+
+.mat-mdc-raised-button[disabled] {
+  background-color: #cecccc !important;
+}

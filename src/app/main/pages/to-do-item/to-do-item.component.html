@@ -1,0 +1,35 @@
+<li class="list-group-item" [ngClass]="toggleClass()">
+  <div class="form-check d-inline">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="complete"
+      (change)="onChange()"
+    />
+    <label for="complete" class="form-check-label lead">{{
+      toDoInput.title
+    }}</label>
+  </div>
+  <div class="float-right">
+    <span class="mx-3">{{ toDoInput.date | date }}</span>
+    <button
+      mat-mini-fab
+      title="Favorite"
+      mat-Tooltip="favorite"
+      [ngClass]="toDoInput.isFavorite ? 'text-danger' : ''"
+      (click)="isFavorite()"
+      style="margin: 0.5rem"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button
+      mat-mini-fab
+      title="Delete"
+      mat-Tooltip="Delete"
+      (click)="deleteTodo(toDoInput)"
+      style="margin: 0.5rem"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</li>

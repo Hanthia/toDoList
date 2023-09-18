@@ -1,0 +1,32 @@
+
+
+.dialog-body {
+    margin-top: 1.5rem;
+}
+
+.modal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 100;
+    background-color: #072146;
+    .close-button,
+    .modal-title {
+        color: white;
+    }
+    .modal-icon {
+        transition: 0.2s;
+        &:hover {
+            background-color: #004481;
+        }
+    }
+    .modal-title {
+        padding: 0 0.5em;
+        font-size: 17px;
+        font-weight: bold;
+    }
+}

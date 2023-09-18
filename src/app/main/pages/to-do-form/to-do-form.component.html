@@ -1,0 +1,34 @@
+<app-custom-dialog [title]="'ADD TODO'">
+  <div fxLayout="column wrap" style="margin-top: 2.5rem">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <div
+        fxLayout="row"
+        fxLayoutGap="10px"
+        fxLayoutAlign="space-evenly center"
+      >
+        <form [formGroup]="toDoForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input
+              type="text"
+              name="todo"
+              class="form-control"
+              placeholder="Add Todo . . ."
+              formControlName="toDo"
+              required
+            />
+          </div>
+          <button
+            mat-raised-button
+            title="Add new"
+            mat-Tooltip="Add new item"
+            style="margin: 0.5rem 0"
+            [disabled]="!toDoForm.valid"
+          >
+            <mat-icon>add</mat-icon>
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</app-custom-dialog>

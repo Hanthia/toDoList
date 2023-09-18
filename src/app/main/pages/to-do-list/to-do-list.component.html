@@ -1,0 +1,54 @@
+<div class="card shadow">
+  <div class="card-header">
+    <h3 class="card-title">My Todo List</h3>
+  </div>
+
+  <div class="card-body" *ngIf="!isFavoriteView">
+    <ul class="list-group" *ngFor="let toDoItem of todoService.todoList">
+      <p>{{ toDoItem.id }}</p>
+      <app-to-do-item [toDoInput]="toDoItem"></app-to-do-item>
+    </ul>
+  </div>
+
+  <div class="card-body" *ngIf="isFavoriteView">
+    <ul class="list-group" *ngFor="let toDoItem of todoService.fav">
+      <p>{{ toDoItem.id }}</p>
+      <app-to-do-item [toDoInput]="toDoItem"></app-to-do-item>
+    </ul>
+  </div>
+  <div>
+    <button
+      *ngIf="!isFavoriteView"
+      mat-flat-button
+      title="Add new"
+      mat-Tooltip="Add new item"
+      (click)="addNewItem()"
+      style="margin: 0.5rem"
+    >
+      <mat-icon>add</mat-icon>
+      Add new item
+    </button>
+    <button
+      *ngIf="isFavoriteView"
+      mat-flat-button
+      title="Go ToDo list"
+      mat-Tooltip="Go ToDo list"
+      [routerLink]="['/list']"
+      style="margin: 0.5rem"
+    >
+      <mat-icon>arrow_back_ios</mat-icon>
+      Go back
+    </button>
+    <button
+      *ngIf="!isFavoriteView"
+      mat-flat-button
+      title="Add new"
+      mat-Tooltip="Add new item"
+      [routerLink]="['/favorite']"
+      style="margin: 0.5rem"
+    >
+      <mat-icon>favorite</mat-icon>
+      Favorite ToDo list
+    </button>
+  </div>
+</div>

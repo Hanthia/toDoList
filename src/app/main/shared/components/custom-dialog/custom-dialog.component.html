@@ -1,0 +1,16 @@
+<div fxLayout="column">
+    <div fxLayout="row" class="modal-header">
+        <div class="modal-title">{{ title }}</div>
+        <div fxLayoutAlign="center" class="modal-icon">
+            <button tabindex="-1" mat-icon-button class="close-button" [mat-dialog-close]="true">
+                <mat-icon class="close-icon">close</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="dialog-body">
+        <mat-dialog-content>
+            <ng-content></ng-content>
+        </mat-dialog-content>
+    </div>
+</div>
